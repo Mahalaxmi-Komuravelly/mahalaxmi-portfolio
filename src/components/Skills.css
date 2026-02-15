@@ -1,0 +1,21 @@
+.perspective {
+  perspective: 1000px;
+}
+
+.heads,
+.tails {
+  backface-visibility: hidden;
+}
+
+.tails {
+  transform: rotateY(180deg);
+}
+
+.perspective:hover .heads {
+  transform: rotateY(180deg);
+}
+
+.perspective:hover .tails {
+  transform: rotateY(0deg);
+}
+
