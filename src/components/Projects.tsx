@@ -24,10 +24,13 @@ const projects = [
   {
     title: "Restoron",
     desc: "Full-stack restaurant reservation system with real-time table booking, dynamic menu, and backend validation to prevent overbooking. Responsive design with clean, modern UI.",
-    tags: [ "React","Tailwind CSS","Node.js", "Express", "SocketIO"],
-    techIcons: [FaReact,SiTailwindcss,FaNodeJs, SiExpress, , SiSupabase],
-    live: "#",
-    github: "#",
+    tags: ["React", "Tailwind CSS", "Node.js", "Express", "SocketIO"],
+    techIcons: [FaReact, SiTailwindcss, FaNodeJs, SiExpress, SiSupabase],
+    live: "https://restoron-client.vercel.app/",
+    github: {
+      frontend: "https://github.com/Mahalaxmi-Komuravelly/restoron-client",
+      backend: "https://github.com/Mahalaxmi-Komuravelly/restoron-api",
+    },
     screenshot: "/images/restoron.png",
   },
   {
@@ -36,7 +39,9 @@ const projects = [
     tags: ["HTML5", "CSS", "JavaScript", "Firebase"],
     techIcons: [FaHtml5, FaCss3Alt, FaJs, SiFirebase],
     live: "https://time-tracking-system-data-analytics.vercel.app/",
-    github: "https://github.com/Mahalaxmi-Komuravelly/Time-Tracking-System-Data-Analytics",
+    github: {
+      frontend: "https://github.com/Mahalaxmi-Komuravelly/Time-Tracking-System-Data-Analytics"
+    },
     screenshot: "/images/timetrack.png",
   },
 ];
@@ -74,13 +79,13 @@ const Projects = () => {
               <div className="md:w-1/2 flex flex-col justify-between overflow-hidden">
                 <div className="w-full aspect-[16/9] md:aspect-auto">
                   <img
-                  src={project.screenshot}
-                  alt={project.title}
-                  className="w-full object-cover rounded-t-xl md:rounded-l-xl"
-                />
+                    src={project.screenshot}
+                    alt={project.title}
+                    className="w-full object-cover rounded-t-xl md:rounded-l-xl"
+                  />
                 </div>
 
-                <div className="flex gap-3 p-4">
+                <div className="flex flex-col sm:flex-row gap-3 p-4">
                   <a
                     href={project.live}
                     target="_blank" rel="noopener noreferrer"
@@ -88,40 +93,62 @@ const Projects = () => {
                   >
                     <ExternalLink size={14} /> Live Demo
                   </a>
-                  <a
-                    href={project.github}
-                    target="_blank" rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-300 text-gray-900 text-sm font-medium hover:bg-gray-100 transition-colors"
-                  >
-                    <Github size={14} /> GitHub
-                  </a>
+                  {project.github?.backend ? (
+                    <>
+                      <a
+                        href={project.github.frontend}
+                        target="_blank" rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-300 text-gray-900 text-sm font-medium hover:bg-gray-100 transition-colors"
+                      >
+                        <Github size={14} /> Frontend
+                      </a>
+                      <a
+                        href={project.github.backend}
+                        target="_blank" rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-300 text-gray-900 text-sm font-medium hover:bg-gray-100 transition-colors"
+                      >
+                        <Github size={14} /> Backend
+                      </a>
+                    </>
+                  ) :
+                    <a
+                      href={project.github.frontend}
+                      target="_blank" rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-gray-300 text-gray-900 text-sm font-medium hover:bg-gray-100 transition-colors"
+                    >
+                      <Github size={14} /> Github
+                    </a>
+                  }
                 </div>
               </div>
 
               {/* Right: Title, Description, Tech Stack */}
-              <div className="md:w-1/2 p-6 flex flex-col justify-center gap-4">
+              < div className="md:w-1/2 p-6 flex flex-col justify-center gap-4" >
                 <h3 className="text-2xl font-semibold text-gray-900 text-center">{project.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{project.desc}</p>
 
                 {/* Tech Icons */}
-                <div className="flex flex-wrap gap-3 mt-2 justify-center">
-                  {project.techIcons.map((Icon, idx) => (
-                    <div
-                      key={idx}
-                      className="relative group flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 hover:bg-primary/20"
-                      title={project.tags[idx]}
-                      style={{ color: brandColors[project.tags[idx]] }}
-                    >
-                      <Icon size={28} />
-                    </div>
-                  ))}
+                < div className="flex flex-wrap gap-3 mt-2 justify-center" >
+                  {
+                    project.techIcons.map((Icon, idx) => (
+                      <div
+                        key={idx}
+                        className="relative group flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 hover:bg-primary/20"
+                        title={project.tags[idx]}
+                        style={{ color: brandColors[project.tags[idx]] }}
+                      >
+                        <Icon size={28} />
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+          ))
+          }
+        </div >
+      </div >
+    </section >
   );
 };
 
