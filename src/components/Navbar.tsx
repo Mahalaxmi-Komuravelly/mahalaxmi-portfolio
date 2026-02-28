@@ -59,9 +59,6 @@ const handleClick = (href: string) => {
   }, 50); // 50ms timeout ensures Framer Motion layout is applied
 };
 
-
-
-
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -107,7 +104,7 @@ const handleClick = (href: string) => {
              bg-primary text-white font-medium text-sm
              shadow-md hover:shadow-lg 
              hover:scale-105 active:scale-95
-             transition-all duration-300"          >
+             transition-all duration-300">
             <Download size={16} /> Resume
           </a>
 
