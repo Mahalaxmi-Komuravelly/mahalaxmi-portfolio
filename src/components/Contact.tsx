@@ -14,19 +14,12 @@ const socials = [
     value: "github.com/Mahalaxmi-Komuravelly",
     href: "https://github.com/Mahalaxmi-Komuravelly/",
   },
-  // {
-  //   icon: Linkedin,
-  //   label: "LinkedIn",
-  //   value: "linkedin.com/in/mahalaxmi",
-  //   href: "https://linkedin.com/in/mahalaxmi",
-  // },
-//   {
-//   icon: FileText,
-//   label: "Resume",
-//   value: "Download Resume",
-//   href: "/Mahalaxmi-Resume.pdf",
-// }
-
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/mahalaxmi-komuravelly",
+    href: "https://linkedin.com/in/mahalaxmi-komuravelly-596476280",
+  },
 ];
 
 const Contact = () => {
