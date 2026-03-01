@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs } from "react-icons/fa";
 import { SiTailwindcss, SiFirebase, SiSupabase, SiPostgresql, SiExpress, SiStripe } from "react-icons/si";
+import { FiBarChart, FiKey, FiLock, FiLayers } from 'react-icons/fi';
 
 // Brand colors mapping
 const brandColors = {
@@ -18,14 +19,30 @@ const brandColors = {
   Supabase: "#3ECF8E",
   PostgreSQL: "#336791",
   SocketIO: "#1E1E1E",
+  "Chart.js": "#F7931E",     // FiBarChart
+  JWT: "#FF6F61",            // FiKey
+  bcrypt: "#4CAF50",         // FiLock
+  "ShadCN UI": "#6366F1",    // FiLayers
 };
 
 const projects = [
   {
+    title: "Social Media Schedular",
+    desc: "Built a full-stack social media scheduling dashboard that allows users to create, schedule, and track posts with role-based access control (Admin, Manager, User). The platform features secure authentication, automated scheduling, and an analytics dashboard to measure engagement metrics.",
+    tags: ["React", "Tailwind CSS", "Node.js", "Express", "SocketIO","PostgreSQL","Chart.js","JWT","bcrypt","ShadCN UI"],
+    techIcons: [FaReact, SiTailwindcss, FaNodeJs, SiExpress, SiSupabase, SiPostgresql,FiBarChart, FiKey, FiLock, FiLayers],
+    live: "https://social-media-schedular-netlify.netlify.app/",
+    github: {
+      frontend: "https://github.com/Mahalaxmi-Komuravelly/social-media-schedular-frontend",
+      backend: "https://github.com/Mahalaxmi-Komuravelly/social-media-schedular-backend",
+    },
+    screenshot: "/images/social-media-schedular.png",
+  },
+  {
     title: "Restoron",
     desc: "Full-stack restaurant reservation system with real-time table booking, dynamic menu, and backend validation to prevent overbooking. Responsive design with clean, modern UI.",
-    tags: ["React", "Tailwind CSS", "Node.js", "Express", "SocketIO"],
-    techIcons: [FaReact, SiTailwindcss, FaNodeJs, SiExpress, SiSupabase],
+    tags: ["React", "Tailwind CSS", "Node.js", "Express", "SocketIO","PostgreSQL"],
+    techIcons: [FaReact, SiTailwindcss, FaNodeJs, SiExpress, SiSupabase,SiPostgresql],
     live: "https://restoron-client.vercel.app/",
     github: {
       frontend: "https://github.com/Mahalaxmi-Komuravelly/restoron-client",
